@@ -8,6 +8,9 @@ const {
   RNSensorsAccelerometer: AccNative,
   RNSensorsMagnetometer: MagnNative,
   RNSensorsBarometer: BarNative,
+  RNSensorsLight: LightNative,
+  RNSensorsProximity: ProxNative,
+  RNSensorsTemperature: TempNative,
   RNSensorsOrientation: OrientNative,
   RNSensorsGravity: GravNative,
 } = NativeModules;
@@ -17,6 +20,9 @@ const listenerKeys = new Map([
   ["gyroscope", "RNSensorsGyroscope"],
   ["magnetometer", "RNSensorsMagnetometer"],
   ["barometer", "RNSensorsBarometer"],
+  ["light", "RNSensorsLight"],
+  ["proximity", "RNSensorsProximity"],
+  ["temperature", "RNSensorsTemperature"],
   ["orientation", "RNSensorsOrientation"],
   ["gravity", "RNSensorsGravity"],
 ]);
@@ -26,6 +32,9 @@ const nativeApis = new Map([
   ["gyroscope", GyroNative],
   ["magnetometer", MagnNative],
   ["barometer", BarNative],
+  ["light", LightNative],
+  ["proximity", ProxNative],
+  ["temperature", TempNative],
   ["orientation", OrientNative],
   ["gravity", GravNative],
 ]);
@@ -35,6 +44,9 @@ const eventEmitterSubscription = new Map([
   ["gyroscope", null],
   ["magnetometer", null],
   ["barometer", null],
+  ["light", null],
+  ["proximity", null],
+  ["temperature", null],
   ["orientation", null],
   ["gravity", null],
 ]);
@@ -84,6 +96,9 @@ const accelerometer = createSensorObservable("accelerometer");
 const gyroscope = createSensorObservable("gyroscope");
 const magnetometer = createSensorObservable("magnetometer");
 const barometer = createSensorObservable("barometer");
+const light = createSensorObservable("light");
+const proximity = createSensorObservable("proximity");
+const temperature = createSensorObservable("temperature");
 const orientation = createSensorObservable("orientation");
 const gravity = createSensorObservable("gravity");
 
@@ -92,6 +107,9 @@ export default {
   accelerometer,
   magnetometer,
   barometer,
+  light,
+  proximity,
+  temperature,
   orientation,
   gravity,
 };

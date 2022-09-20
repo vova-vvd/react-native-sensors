@@ -119,6 +119,18 @@ public class RNSensor extends ReactContextBaseJavaModule implements SensorEventL
           map.putDouble("pressure", sensorEvent.values[0]);
           break;
 
+        case Sensor.TYPE_LIGHT:
+          map.putDouble("light", sensorEvent.values[0]);
+          break;
+
+        case Sensor.TYPE_PROXIMITY:
+          map.putDouble("proximity", sensorEvent.values[0]);
+          break;
+
+        case Sensor.TYPE_AMBIENT_TEMPERATURE:
+          map.putDouble("temperature", sensorEvent.values[0]);
+          break;
+
         case Sensor.TYPE_ROTATION_VECTOR:
           SensorManager.getQuaternionFromVector(quaternion, sensorEvent.values);
           SensorManager.getRotationMatrixFromVector(rotation, sensorEvent.values);

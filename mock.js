@@ -19,6 +19,9 @@ const rnSensors = {
     gyroscope: 'gyroscope',
     magnetometer: 'magnetometer',
     barometer: 'barometer',
+    light: "light",
+    proximity: "proximity",
+    temperature: "temperature",
     gravity: 'gravity'
   },
 
@@ -26,6 +29,9 @@ const rnSensors = {
   gyroscope: sensorMock(),
   magnetometer: sensorMock(),
   barometer: sensorMock({ pressure: 0 }),
+  light: sensorMock({ light: 0 }),
+  proximity: sensorMock({ proximity: 0 }),
+  temperature: sensorMock({ temperature: 0 }),
   gravity: sensorMock(),
 
   setLogLevelForType: jest.fn(),

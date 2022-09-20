@@ -4,6 +4,9 @@ const {
   RNSensorsAccelerometer: AccNative,
   RNSensorsMagnetometer: MagnNative,
   RNSensorsBarometer: BarNative,
+  RNSensorsLight: LightNative,
+  RNSensorsProximity: ProxNative,
+  RNSensorsTemperature: TempNative,
   RNSensorsOrientation: OrientNative,
   RNSensorsGravity: GravNative,
 } = NativeModules;
@@ -17,6 +20,9 @@ const nativeApis = new Map([
   ["gyroscope", GyroNative],
   ["magnetometer", MagnNative],
   ["barometer", BarNative],
+  ["light", LightNative],
+  ["proximity", ProxNative],
+  ["temperature", TempNative],
   ["orientation", OrientNative],
   ["gravity", GravNative],
 ]);

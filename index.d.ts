@@ -6,6 +6,9 @@ declare module "react-native-sensors" {
     gyroscope: "gyroscope";
     magnetometer: "magnetometer";
     barometer: "barometer";
+    light: "light";
+    proximity: "proximity";
+    temperature: "temperature";
     orientation: "orientation";
     gravity: "gravity";
   };
@@ -13,7 +16,7 @@ declare module "react-native-sensors" {
   export const SensorTypes: Sensors;
 
   export const setUpdateIntervalForType: (type: keyof Sensors, updateInterval: number) => void;
-  
+
   export const setLogLevelForType: (type: keyof Sensors, logLevel: 0 | 1 | 2) => void;
 
   export interface SensorData {
@@ -25,6 +28,21 @@ declare module "react-native-sensors" {
 
   export interface BarometerData {
     pressure: number;
+    timestamp: number;
+  }
+
+  export interface LightData {
+    light: number;
+    timestamp: number;
+  }
+
+  export interface ProximityData {
+    proximity: number;
+    timestamp: number;
+  }
+
+  export interface TemperatureData {
+    temperature: number;
     timestamp: number;
   }
 
@@ -44,11 +62,14 @@ declare module "react-native-sensors" {
     gyroscope: Observable<SensorData>;
     magnetometer: Observable<SensorData>;
     barometer: Observable<BarometerData>;
+    light: Observable<LightData>;
+    proximity: Observable<ProximityData>;
+    temperature: Observable<TemperatureData>;
     orientation: Observable<OrientationData>;
     gravity: Observable<SensorData>
   };
 
-  export const { accelerometer, gyroscope, magnetometer, barometer, orientation, gravity }: SensorsBase;
+  export const { accelerometer, gyroscope, magnetometer, barometer, light, proximity, temperature, orientation, gravity }: SensorsBase;
 
   const sensors: SensorsBase;
 
